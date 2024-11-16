@@ -4,7 +4,7 @@ document.getElementById("signInAdmin").addEventListener("click", function () {
     const loader = document.getElementById("loader");
     loader.style.display = 'block';
     setTimeout(function () {
-        window.location.href = "admin_login.html";
+        window.location.href = "admin_login.php";
     }, 2000);
 });
 

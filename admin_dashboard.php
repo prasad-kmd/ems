@@ -26,14 +26,42 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
 <html>
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $_SESSION['admin_name']; ?>'s Dashboard</title>
+    <title><?php echo $staffName; ?>'s Dashboard (<?php echo $role; ?>)</title>
     <link rel="stylesheet" href="assets/css/semantic.css">
     <link rel="stylesheet" href="assets/font/fonts.css" />
 </head>
 
 <body>
+    <!-- Navigation Bar -->
+    <div class="ui inverted segment">
+        <div class="ui inverted secondary menu" style="font-family: 'Philosopher';">
+            <div class="item" width="50px">
+                <img src="assets/images/logo.webp" alt="Company Logo" width="50px">
+            </div>
+            <a class="active item">
+                Admin Dashboard
+            </a>
+            <!-- <a class="item">
+                Jobs
+            </a>
+            <a class="item">
+                Locations
+            </a> -->
+            <div class="right menu">
+                <div class="item">
+                    <a href="logout.php"><button class="ui right inverted secondary labeled icon button">
+                            <i class="sign out alternate icon"></i>
+                            <span style="font-family: 'Sansumi';font-weight: 500;">Log out</span>
+                        </button></a>
+                    <!-- &nbsp; -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="container">
         <h2>Welcome, <?php echo $staffName; ?> (<?php echo $role; ?>)!</h2>
         <img src="<?php echo $profilePicture; ?>" alt="Profile Picture">
@@ -91,11 +119,12 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
                 </ul>
             <?php endif; ?>
 
-                <a href="edit_profile.php">profile edit</a>
+            <a href="edit_profile.php">profile edit</a>
         </div>
     </div>
 
-
+    <script src="assets/js/semantic.js"></script>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
 </body>
 
 </html>
