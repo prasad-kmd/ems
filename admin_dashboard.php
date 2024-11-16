@@ -60,11 +60,47 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
             </div>
         </div>
     </div>
-
-
+    <!-- Navigation Bar Ends -->
+    <!-- Titles -->
+    <div class="ui segment">
+        <div class="ui two column very relaxed grid">
+            <div class="column">
+                <h1 class="ui header" style="font-family: 'Google September 2015';">
+                    <img src="<?php echo $profilePicture; ?>" alt="Admin" class="ui avatar image" />
+                    <div class="content">
+                        Welcome Back, <span style="font-family: 'Philosopher';"><?php echo $staffName; ?></span> !
+                        <div class="sub header">You're the <?php echo $role; ?> !</div>
+                    </div>
+                </h1>
+            </div>
+            <div class="column">
+                <h1 class="ui header" style="font-family: 'Google September 2015';">
+                    <img src="assets/images/svg/dashboard_layout.svg" alt="Admin" class="ui image">
+                    <div class="content">
+                        Administration Dashboard
+                        <div class="sub header">Manage your <?php echo $role; ?> preferences</div>
+                    </div>
+                </h1>
+            </div>
+        </div>
+        <div class="ui vertical divider">
+            &nbsp;
+        </div>
+    </div>
+    <!-- titles Ends -->
+    <!-- menu  -->
+    <div class="ui six item menu" style="padding: 5px;font-family: 'Nasalization Rg';">
+        <a href="create_event.php" class="item"><i class="plus square outline icon"></i>Create Event</a>
+        <a href="manage_events.php" class="item"><i class="bookmark outline icon"></i>Manage Events</a>
+        <a href="manage_bookings.php" class="item"><i class="bookmark icon"></i>Manage Bookings</a>
+        <a href="view_clients.php" class="item"><i class="quote left icon"></i>Client Informations</a>
+        <a href="event_calendar.php" class="item"><i class="calendar alternate outline icon"></i>Event Calendar</a>
+        <a href="reports.php" class="item"><i class="file alternate icon"></i>Generate Reports</a>
+    </div>
+    <!-- menu ends -->
     <div class="container">
         <h2>Welcome, <?php echo $staffName; ?> (<?php echo $role; ?>)!</h2>
-        <img src="<?php echo $profilePicture; ?>" alt="Profile Picture">
+        <!-- <img src="<?php echo $profilePicture; ?>" alt="Profile Picture"> -->
 
         <div class="dashboard-content">
 
