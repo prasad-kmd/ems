@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/fomantic.css" />
+    <script src="assets/js/jquery.min.js" />
+    </script>
+    <script src="assets/js/fomantic.min.js"></script>
+    <!-- <style>
+        body {
+            padding: 1em;
+        }
+
+        *:has(> .ui.toast-container) {
+            position: relative;
+        }
+
+        .ui.toast-container {
+            position: absolute;
+            display: none;
+        }
+    </style> -->
+</head>
+
+<body>
+    <div class="ui inverted segment">
+
+        <div class="ui button">
+            Toggle alert
+        </div>
+        <div class="ui error message">
+            Replace <b><u>.toast-container</u></b> with <b><u>.toast</u></b>.
+        </div>
+
+        <div class="top right ui toast-container">
+            <div class="toast-box transition visible">
+                <div class="pink ui toast">
+                    <div class="content">
+                        <div>I am a toast generated out of pure HTML</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>$.fn.toast2 = function (content) {
+            let $this = $(this)
+            $this.find(".content").html(content)
+            $this.transition("fade p")
+        }
+
+        $(".ui.button").click(function () {
+            $(".ui.toast-container").toast2(
+                'This is dynamic contented toas.<br><h5 class="ui header">Here we should apply current toast features like autohide.</h5>',
+            )
+        })</script>
+</body>
+
+</html>
