@@ -51,6 +51,10 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
             </a> -->
             <div class="right menu">
                 <div class="item">
+                    <a href="edit_profile.php"><button class="ui right inverted yellow labeled icon button">
+                            <i class="edit outline icon"></i>
+                            <span style="font-family: 'Sansumi';font-weight: 500;">Profile</span>
+                        </button></a>
                     <a href="logout.php"><button class="ui right inverted secondary labeled icon button">
                             <i class="sign out alternate icon"></i>
                             <span style="font-family: 'Sansumi';font-weight: 500;">Log out</span>
@@ -89,76 +93,37 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
     </div>
     <!-- titles Ends -->
     <!-- menu  -->
-    <div class="ui six item menu" style="padding: 5px;font-family: 'Nasalization Rg';">
-        <a href="create_event.php" class="item"><i class="plus square outline icon"></i>Create Event</a>
-        <a href="manage_events.php" class="item"><i class="bookmark outline icon"></i>Manage Events</a>
-        <a href="manage_bookings.php" class="item"><i class="bookmark icon"></i>Manage Bookings</a>
-        <a href="view_clients.php" class="item"><i class="quote left icon"></i>Client Informations</a>
-        <a href="event_calendar.php" class="item"><i class="calendar alternate outline icon"></i>Event Calendar</a>
-        <a href="reports.php" class="item"><i class="file alternate icon"></i>Generate Reports</a>
+    <div class="ui fluid five item menu" style="padding: 5px;font-family: 'Nasalization Rg';">
+        <?php if ($role == 'Manager' || $role == 'Event Organizer' || $role == 'System Administrator'): ?>
+            <a href="add_event.php" class="item"><i class="plus square outline icon"></i>Create Event</a>
+        <?php endif; ?>
+        <?php if ($role == 'Manager' || $role == 'System Administrator'): ?>
+            <a href="manage_event.php" class="item"><i class="bookmark outline icon"></i>Manage Events</a>
+        <?php endif; ?>
+        <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
+            <a href="manage_bookings.php" class="item"><i class="bookmark icon"></i>Manage Bookings</a>
+        <?php endif; ?>
+        <?php if ($role == 'Manager' || $role == 'Event Organizer' || $role == 'System Administrator'): ?>
+            <a href="manage_clients.php" class="item"><i class="quote left icon"></i>Manage Clients</a>
+        <?php endif; ?>
+        <a href="event_calendar.php" class="item disabled"><i class="calendar alternate outline icon"></i>Event Calendar</a>
+    </div>
+    <div class="ui fluid five item menu" style="padding: 5px;font-family: 'Nasalization Rg';">
+        <a href="reports.php" class="item disabled"><i class="file alternate icon"></i>Generate Reports</a>
+        <?php if ($role == 'Manager' || $role == 'System Administrator'): ?>
+            <a href="manage_staff.php" class="item"><i class="user secret icon"></i>Manage Staff</a>
+        <?php endif; ?>
+        <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
+            <a href="manage_payments.php" class="item"><i class="dollar sign icon"></i>Manage Payments</a>
+        <?php endif; ?>
+        <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
+            <a href="manage_venues.php" class="item"><i class="location arrow icon"></i>Manage Venues</a>
+        <?php endif; ?>
+        <?php if ($role == 'System Administrator'): ?>
+            <a href="backup_database.php" class="item"><i class="archive icon">Backup Database</a>
+        <?php endif; ?>
     </div>
     <!-- menu ends -->
-    <div class="container">
-        <h2>Welcome, <?php echo $staffName; ?> (<?php echo $role; ?>)!</h2>
-        <!-- <img src="<?php echo $profilePicture; ?>" alt="Profile Picture"> -->
-
-        <div class="dashboard-content">
-
-            <?php if ($role == 'Manager' || $role == 'Event Organizer' || $role == 'System Administrator'): ?>
-                <h3>Client Management</h3>
-                <ul>
-                    <li><a href="manage_clients.php">Manage Clients</a></li>
-                </ul>
-            <?php endif; ?>
-
-            <?php if ($role == 'Manager' || $role == 'System Administrator'): ?>
-                <h3>Staff Management</h3>
-                <ul>
-                    <li><a href="manage_staff.php">Manage Staff</a></li>
-                </ul>
-            <?php endif; ?>
-
-            <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
-                <h3>Booking Management</h3>
-                <ul>
-                    <li><a href="manage_bookings.php">Manage Bookings</a></li>
-                </ul>
-            <?php endif; ?>
-
-            <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
-                <h3>Payment Management</h3>
-                <ul>
-                    <li><a href="manage_payments.php">Manage Payments</a></li>
-                </ul>
-            <?php endif; ?>
-
-
-
-            <?php if ($role == 'Manager' || $role == 'System Administrator'): ?>
-                <h3>Event Management</h3>
-                <ul>
-                    <li><a href="manage_event.php">Manage Events</a></li>
-                </ul>
-
-                <h3>Venue Management</h3>
-                <ul>
-                    <li><a href="manage_venues.php">Manage Venues</a></li>
-                </ul>
-            <?php endif; ?>
-
-
-
-            <?php if ($role == 'System Administrator'): ?>
-                <h3>System Administration</h3>
-                <ul>
-                    <li><a href="backup_database.php">Backup Database</a></li>
-                </ul>
-            <?php endif; ?>
-
-            <a href="edit_profile.php">profile edit</a>
-        </div>
-    </div>
-
     <script src="assets/js/semantic.js"></script>
     <script src="assets/js/jquery-3.7.1.min.js"></script>
 </body>
