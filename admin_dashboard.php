@@ -11,10 +11,10 @@ $staffId = $_SESSION['staff_id'];
 $role = $_SESSION['staff_role'];
 
 // Fetch staff details (for profile section - same as before)
-$stmt = $conn->prepare("SELECT staff_name, staff_photo FROM staff WHERE staff_id = ?");
+$stmt = $conn->prepare("SELECT staff_name, staff_photo, staff_role FROM staff WHERE staff_id = ?");
 $stmt->bind_param("i", $staffId);
 $stmt->execute();
-$stmt->bind_result($staffName, $staffPhoto);
+$stmt->bind_result($staffName, $staffPhoto, $role);
 $stmt->fetch();
 $stmt->close();
 $conn->close(); //Close after fetching data
@@ -111,16 +111,16 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
     <div class="ui fluid five item menu" style="padding: 5px;font-family: 'Nasalization Rg';">
         <a href="#" class="item disabled"><i class="file alternate icon"></i>Generate Reports</a>
         <?php if ($role == 'Manager' || $role == 'System Administrator'): ?>
-            <a href="manage_staff.php" class="item"><i class="user secret icon"></i>Manage Staff</a>
+            <a href="staff/manage_staff.php" class="item"><i class="user secret icon"></i>Manage Staff</a>
         <?php endif; ?>
         <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
-            <a href="manage_payments.php" class="item"><i class="dollar sign icon"></i>Manage Payments</a>
+            <a href="payments/manage_payments.php" class="item"><i class="dollar sign icon"></i>Manage Payments</a>
         <?php endif; ?>
         <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
             <a href="manage_venues.php" class="item"><i class="location arrow icon"></i>Manage Venues</a>
         <?php endif; ?>
         <?php if ($role == 'System Administrator'): ?>
-            <a href="backup_database.php" class="item"><i class="archive icon">Backup Database</a>
+            <a href="backup_database.php" class="item"><i class="archive icon"></i>Backup Database</a>
         <?php endif; ?>
     </div>
     <!-- menu ends -->
