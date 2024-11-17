@@ -117,7 +117,7 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
             <a href="payments/manage_payments.php" class="item"><i class="dollar sign icon"></i>Manage Payments</a>
         <?php endif; ?>
         <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
-            <a href="manage_venues.php" class="item"><i class="location arrow icon"></i>Manage Venues</a>
+            <a href="venues/manage_venues.php" class="item"><i class="location arrow icon"></i>Manage Venues</a>
         <?php endif; ?>
         <?php if ($role == 'System Administrator'): ?>
             <a href="backup_database.php" class="item"><i class="archive icon"></i>Backup Database</a>
