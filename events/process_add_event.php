@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['staff_id'])) {
-    header("Location: admin_login.php");
+    header("Location: ../admin_login.php");
     exit;
 }
 
-require_once 'db_config.php';
+require_once '../db_config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eventTitle = $_POST["event_title"];
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (in_array($_FILES['event_photo']['type'], $allowedTypes)) {
             $ext = pathinfo($_FILES['event_photo']['name'], PATHINFO_EXTENSION);
             $newFileName = uniqid() . "." . $ext;
-            $targetPath = "uploads/" . $newFileName; // Make sure 'uploads' directory exists
+            $targetPath = "../uploads/" . $newFileName; // Make sure 'uploads' directory exists
 
             if (move_uploaded_file($_FILES['event_photo']['tmp_name'], $targetPath)) {
                 $photoPath = $targetPath;
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if ($stmt->execute()) {
-        header("Location: admin_dashboard.php");
+        header("Location: ../admin_dashboard.php");
         exit;
     } else {
         echo "Error: " . $stmt->error; // Display error message for debugging
