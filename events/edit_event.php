@@ -66,7 +66,7 @@ if (isset($_GET['id'])) {
                                     <i class="asterisk loading icon"></i>
                                     <span style="font-family: 'Sansumi';font-weight: 500;">Back to Dashboard</span>
                                 </button></a>
-                            <a href="logout.php"><button class="ui right inverted secondary labeled icon button">
+                            <a href="../logout.php"><button class="ui right inverted secondary labeled icon button">
                                     <i class="sign out alternate icon"></i>
                                     <span style="font-family: 'Sansumi';font-weight: 500;">Log out</span>
                                 </button></a>

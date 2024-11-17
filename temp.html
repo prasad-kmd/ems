@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/fomantic.css" />
+    <!-- <title>Document</title> -->
+    <link rel="stylesheet" href="assets/css/semantic.css" />
     <script src="assets/js/jquery.min.js" />
     </script>
-    <script src="assets/js/fomantic.min.js"></script>
+    <script src="assets/js/semantic.js"></script>
     <!-- <style>
         body {
             padding: 1em;
@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <div class="ui inverted segment">
+    <!-- <div class="ui inverted segment">
 
         <div class="ui button">
             Toggle alert
@@ -56,7 +56,187 @@
             $(".ui.toast-container").toast2(
                 'This is dynamic contented toas.<br><h5 class="ui header">Here we should apply current toast features like autohide.</h5>',
             )
-        })</script>
+        })</script> -->
+    <!-- <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .ui.container {
+            text-align: center;
+        }
+    </style>
+    <div class="ui container">
+        <i class="warning circle icon"></i>
+        <div class="content">
+            <div class="header">
+                404 Not Found
+            </div>
+            <p>The page you are looking for does not exist.</p>
+            <a href="/" class="ui primary button">Return Home</a>
+        </div>
+
+    </div> -->
+    <!-- <style>
+        /* Custom styles to center the content vertically and horizontally */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2; /* Light gray background */
+        }
+        
+       .ui.container.error-container {
+            text-align: center; /* Ensure all text within the container is centered */
+            max-width: 600px!important; /* Optional: Set a max width if desired */
+        }
+        
+       .ui.header {
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <div class="ui container error-container">
+        <h1 class="ui header"> 
+            <div class="ui massive red circular label">404</div>
+            <div class="content">Page Not Found</div>
+        </h1>
+        <h3>Sorry, the page you requested does not exist or has been moved.</h3>
+        <p>You may want to try our homepage or contact us for more information.</p>
+        <div class="ui buttons">
+            <a href="/" class="ui button primary">Back to Homepage</a>
+            <a href="/contact" class="ui button">Contact Us</a>
+        </div>
+    </div> -->
+    <!-- <style>
+        /* Custom styles to center the content vertically and horizontally */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            /* Light gray background */
+        }
+
+        .ui.container.error-container {
+            text-align: center;
+            /* Ensure all text within the container is centered */
+            max-width: 650px !important;
+            /* Optional: Set a max width if desired */
+        }
+
+        .ui.header {
+            margin-bottom: 20px;
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            color: #9F3A38;
+            /* Deep red color for the error code */
+            margin-bottom: 0px;
+        }
+
+        .error-block {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px 30px;
+    font-size: 120px!important; /* Override Semantic UI's font size for.massive */
+}
+
+
+        .ui.buttons.button {
+            margin: 0 10px;
+        }
+    </style>
+    <div class="ui container error-container">
+        <div class="error-code ui massive red circular label">421</div>
+        <h2 class="ui header">Misdirected Request</h2>
+        <p class="error-message">
+            This request was directed to a server that is not able to produce a valid or useful response, but could be
+            retried with the correct server.
+        </p>
+        <div class="ui buttons">
+            <a href="/" class="ui button primary">Back to Homepage</a>
+            <a href="/contact" class="ui button">Report This Issue</a>
+            <a href="javascript:history.back()" class="ui button">Go Back</a>
+        </div>
+    </div> -->
+    <!-- <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .ui.container {
+            text-align: center;
+        }
+    </style>
+    <div class="ui container">
+        <div class="ui icon message">
+            <i class="warning circle icon"></i>
+            <div class="content">
+                <div class="header">
+                    Booking Not Found
+                </div>
+                <p>Error Code: BOOKING_NOT_FOUND</p>
+                <p>The booking you are looking for does not exist.</p>
+                <a href="/" class="ui primary button">Return Home</a>
+            </div>
+        </div>
+    </div> -->
+    <!-- <title>Booking Not Found - 204 No Content</title>
+    <div class="ui middle aligned center aligned grid" style="height: 100vh; background-color: #f9f9f9;">
+        <div class="column" style="max-width: 450px;">
+            <div class="ui segment" style="background-color: #fff; padding: 3em;">
+                <div class="ui huge header" style="font-family: 'Philosopher';">Booking Not Found</div>
+                <div class="ui divider"></div>
+                <div class="ui icon message" style="background-color: #f9f9f9; border: none;">
+                    <i class="fas fa-calendar-times fa-5x" style="color: #ddd;"></i>
+                    <div class="content">
+                        <div class="header" style="color: #ff0000;">Error 204: No Content</div>
+                        <p>The booking you are looking for does not exist or is no longer available.</p>
+                        <p>Please check your booking reference or try searching again.</p>
+                        <div class="actions">
+                            <a href="manage_bookings.php" class="ui primary button">Return to Manage Bookings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <title>Invalid Booking ID - Error 400</title>
+    <div class="ui middle aligned center aligned grid" style="height: 100vh; background-color: #f9f9f9;">
+        <div class="column" style="max-width: 450px;">
+          <div class="ui segment" style="background-color: #fff; padding: 3em; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+            <div class="ui huge header" style="color: #655CAA;font-family: 'Philosopher';">Invalid Booking ID</div>
+            <div class="ui divider"></div>
+            <div class="ui negative message" style="border-radius: 0; box-shadow: none;">
+              <i class="fas fa-exclamation-triangle fa-3x" style="float: left; margin: 0 1em 0 0; color: #D9534F;"></i>
+              <div class="header" style="color: #767676;">Error 400: Bad Request</div>
+              <p>The booking ID you entered is invalid or does not exist in our system.</p>
+              <p>Please double-check your booking ID and try again. Ensure it matches the one provided in your booking confirmation.</p>
+              <div class="actions">
+                <a href="manage_bookings.php" class="ui button" style="margin-left: 0.5em;">Return to Manage Bookings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 </body>
 
 </html>

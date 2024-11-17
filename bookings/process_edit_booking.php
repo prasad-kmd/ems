@@ -1,12 +1,12 @@
 <?php
 session_start();
 if (!isset($_SESSION['staff_id'])) {
-    header("Location: admin_login.php");
+    header("Location: ../admin_login.php");
     exit;
 }
 
 
-require_once 'db_config.php';
+require_once '../db_config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $bookingId = $_POST['booking_id'];
