@@ -29,7 +29,7 @@ $conn->close();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create an Event</title>
-  <link rel="stylesheet" href="../assets/css/semantic.css">
+  <link rel="stylesheet" href="../assets/css/semantic.css" />
   <link rel="stylesheet" href="../assets/font/fonts.css" />
 </head>
 

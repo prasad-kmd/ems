@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['staff_id'])) {
-    header("Location: admin_login.php");
+    header("Location: ../admin_login.php");
     exit;
 }
 
-require_once 'db_config.php';
+require_once '../db_config.php';
 
 
 if (isset($_GET['id'])) {
@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
     if ($stmt->execute()) {
 
 
-      if ($eventPhoto && file_exists($eventPhoto) && $eventPhoto !== 'images/default_profile.jpg') {
+      if ($eventPhoto && file_exists($eventPhoto) && $eventPhoto !== './images/default_profile.jpg') {
           unlink($eventPhoto);
       }
 
