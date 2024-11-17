@@ -17,7 +17,7 @@ $stmt->execute();
 $stmt->bind_result($staffName, $staffPhoto, $role);
 $stmt->fetch();
 $stmt->close();
-$conn->close(); //Close after fetching data
+// $conn->close(); //Close after fetching data
 
 $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
 ?>
@@ -43,12 +43,6 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
             <a class="active item">
                 Admin Dashboard
             </a>
-            <!-- <a class="item">
-                Jobs
-            </a>
-            <a class="item">
-                Locations
-            </a> -->
             <div class="right menu">
                 <div class="item">
                     <a href="edit_profile.php"><button class="ui right inverted yellow labeled icon button">
@@ -124,8 +118,199 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
         <?php endif; ?>
     </div>
     <!-- menu ends -->
+    <!-- cards begins -->
+    <div class="ui segments">
+        <div class="ui center aligned segment">
+            <h2 style="font-family: 'Google Sans';">System Statistic</h2>
+        </div>
+        <div class="ui center aligned horizontal segments">
+            <div class="ui red segment">
+                <div class="ui inverted segment" id="dash1">
+                    <div class="ui active inverted placeholder">
+                        <div class="image header">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui fluid card" id="dash1h" style="display: none;">
+                    <div class="center aligned content">
+                        <div class="header" style="font-family: 'El Messiri';">Total Planned Events</div>
+                    </div>
+                    <div class="content">
+                        <h2 class="ui center aligned icon header red">
+                            <?php
+                            $totalEvents = $conn->query("SELECT COUNT(*) AS total FROM event")->fetch_assoc()['total'];
+                            ?>
+                            <i class="calendar alternate outline icon"></i>
+                            <span class="value" style="font-family: 'El Messiri';"><?php echo $totalEvents ?></span>
+                        </h2>
+                    </div>
+                    <div class="center aligned extra content">
+                        <button class="ui inverted grey button"><a href="events/manage_event.php" style="font-family: 'El Messiri';">Manage Events</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="ui blue segment">
+                <div class="ui inverted segment" id="dash2">
+                    <div class="ui active inverted placeholder">
+                        <div class="image header">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui fluid card" id="dash2h" style="display: none;">
+                    <div class="center aligned content">
+                        <div class="header" style="font-family: 'El Messiri';">Total Registered Clients</div>
+                    </div>
+                    <div class="content">
+                        <h2 class="ui center aligned icon header blue">
+                            <?php
+                            $totalClients = $conn->query("SELECT COUNT(*) AS total FROM client")->fetch_assoc()['total'];
+                            ?>
+                            <i class="user circle outline icon"></i>
+                            <span class="value" style="font-family: 'El Messiri';"><?php echo $totalClients ?></span>
+                        </h2>
+                    </div>
+                    <div class="center aligned extra content">
+                        <button class="ui inverted grey button"><a href="clients/manage_clients.php" style="font-family: 'El Messiri';">Manage Clients</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="ui orange segment">
+                <div class="ui inverted segment" id="dash3">
+                    <div class="ui active inverted placeholder">
+                        <div class="image header">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui fluid card" id="dash3h" style="display: none;">
+                    <div class="center aligned content">
+                        <div class="header" style="font-family: 'El Messiri';">Total Bookings</div>
+                    </div>
+                    <div class="content">
+                        <h2 class="ui center aligned icon header orange">
+                            <?php
+                            $totalBookings = $conn->query("SELECT COUNT(*) AS total FROM booking")->fetch_assoc()['total'];
+                            ?>
+                            <i class="book icon"></i>
+                            <span class="value" style="font-family: 'El Messiri';"><?php echo $totalBookings ?></span>
+                        </h2>
+                    </div>
+                    <div class="center aligned extra content">
+                        <button class="ui inverted grey button"><a href="bookings/manage_bookings.php" style="font-family: 'El Messiri';">Manage Bookings</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="ui green segment">
+                <div class="ui inverted segment" id="dash4">
+                    <div class="ui active inverted placeholder">
+                        <div class="image header">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui fluid card" id="dash4h" style="display: none;">
+                    <div class="center aligned content">
+                        <div class="header" style="font-family: 'El Messiri';">Total Revenue</div>
+                    </div>
+                    <div class="content">
+                        <h2 class="ui center aligned icon header green">
+                            <?php
+                            $totalRevenue = $conn->query("SELECT SUM(payment_amount) AS total FROM payment")->fetch_assoc()['total'];
+                            ?>
+                            <i class="gem icon"></i>
+                            <span class="value" style="font-family: 'El Messiri';">LKR <?php echo $totalRevenue ?></span>
+                        </h2>
+                    </div>
+                    <div class="center aligned extra content">
+                        <button class="ui inverted grey button"><a href="payments/manage_payments.php" style="font-family: 'El Messiri';">Manage Payments</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="ui purple segment">
+                <div class="ui inverted segment" id="dash5">
+                    <div class="ui active inverted placeholder">
+                        <div class="image header">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui fluid card" id="dash5h" style="display: none;">
+                    <div class="center aligned content">
+                        <div class="header" style="font-family: 'El Messiri';">Total Venues Arranged</div>
+                    </div>
+                    <div class="content">
+                        <h2 class="ui center aligned icon header purple">
+                            <?php
+                            $totalVenues = $conn->query("SELECT COUNT(*) AS total FROM venue")->fetch_assoc()['total'];
+                            ?>
+                            <i class="street view icon"></i>
+                            <span class="value" style="font-family: 'El Messiri';"><?php echo $totalVenues ?></span>
+                        </h2>
+                    </div>
+                    <div class="center aligned extra content">
+                        <button class="ui primary disabled loading button">&nbsp;&nbsp;&nbsp;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cards ends -->
+
     <script src="assets/js/semantic.js"></script>
     <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        function randomTimeout(id1, id2, delay) {
+            setTimeout(function() {
+                document.getElementById(id1).style.display = 'none';
+                document.getElementById(id2).style.display = 'block';
+            }, delay);
+        }
+
+        function randomTimeoutSequence() {
+            const min = 1000;
+            const max = 7500;
+
+            randomTimeout('dash1', 'dash1h', Math.floor(Math.random() * (max - min + 1)) + min);
+            randomTimeout('dash2', 'dash2h', Math.floor(Math.random() * (max - min + 1)) + min);
+            randomTimeout('dash3', 'dash3h', Math.floor(Math.random() * (max - min + 1)) + min);
+            randomTimeout('dash4', 'dash4h', Math.floor(Math.random() * (max - min + 1)) + min);
+            randomTimeout('dash5', 'dash5h', Math.floor(Math.random() * (max - min + 1)) + min);
+        }
+
+        randomTimeoutSequence();
+    </script>
 </body>
 
 </html>

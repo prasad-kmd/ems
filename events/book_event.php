@@ -26,7 +26,7 @@ if (isset($_GET['event_id'])) {
         $bookedSeatsResult = $bookedSeatsStmt->get_result();
         $bookedSeatsData = $bookedSeatsResult->fetch_assoc();
         $bookedSeats = $bookedSeatsData['total_booked'] ?? 0;
-        $availableSeats = $event['venue_capacity'] - $bookedSeats;
+        $availableSeats = $event['event_capacity'] - $bookedSeats;
 
 
         // Close statements to avoid "Commands out of sync" errors
@@ -78,10 +78,6 @@ if (isset($_GET['event_id'])) {
                     <span class="item" style="font-family: Neuropol;">Book Selected Event : <?php echo $event['event_title']; ?></span>
                 </div>
                 <!-- Nav Bar ends -->
-                <!-- <?php if ($event['event_photo']): ?>
-                    <img src="<?php echo $event['event_photo']; ?>" alt="<?php echo $event['event_title']; ?> Photo" class="event-photo">
-                <?php endif; ?> -->
-                <h2>Book Event: <?php echo $event['event_title']; ?></h2>
 
                 <div class="ui placeholder segment">
                     <div class="ui two column very relaxed stackable grid">
