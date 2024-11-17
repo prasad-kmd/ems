@@ -101,7 +101,7 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
             <a href="events/manage_event.php" class="item"><i class="bookmark outline icon"></i>Manage Events</a>
         <?php endif; ?>
         <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
-            <a href="manage_bookings.php" class="item"><i class="bookmark icon"></i>Manage Bookings</a>
+            <a href="bookings/manage_bookings.php" class="item"><i class="bookmark icon"></i>Manage Bookings</a>
         <?php endif; ?>
         <?php if ($role == 'Manager' || $role == 'Event Organizer' || $role == 'System Administrator'): ?>
             <a href="manage_clients.php" class="item"><i class="quote left icon"></i>Manage Clients</a>
