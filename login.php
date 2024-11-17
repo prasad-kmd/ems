@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     } else {
         // Invalid credentials
-        echo "<script>alert('Invalid email or password.'); window.location.href = 'auth.php';</script>"; // Redirect back to login page with error message
+        echo "<script>alert('Invalid email or password.'); window.location.href = 'auth.html';</script>"; // Redirect back to login page with error message
        exit; //essential
     }
 

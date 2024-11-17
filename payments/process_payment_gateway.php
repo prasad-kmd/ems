@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once 'db_config.php';
+require_once '../db_config.php';
 
 if (isset($_POST['booking_id'], $_POST['payment_method'])) { // Make sure payment_method is received
     $bookingId = $_POST['booking_id'];
@@ -92,7 +92,7 @@ if (isset($_POST['booking_id'], $_POST['payment_method'])) { // Make sure paymen
 
         $conn->commit(); //Commit here
 
-        header("Location: booking_confirmation.php?booking_id=" . $bookingId);
+        header("Location: ../bookings/booking_confirmation.php?booking_id=" . $bookingId);
         exit;
     } catch (Exception $e) {
 

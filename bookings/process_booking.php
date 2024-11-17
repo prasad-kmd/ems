@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($stmt->execute()) {
             header(
-                'Location: payment_gateway.php?booking_id=' . $stmt->insert_id
+                'Location: ../payments/payment_gateway.php?booking_id=' . $stmt->insert_id
             ); // Redirect to payment gateway
             exit();
         } else {

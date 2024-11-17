@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['client_id'])) {
-    header("Location: auth.php");
+    header("Location: ../auth.html");
     exit;
 }
 
-require_once 'db_config.php';
+require_once '../db_config.php';
 $clientId = $_SESSION['client_id'];
 
 $stmt = $conn->prepare("

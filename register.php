@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         // Redirect to login page after successful registration  (JavaScript redirect is also shown below)
-         echo "<script>alert('Registration successful!'); window.location.href = 'auth.php';</script>";
+         echo "<script>alert('Registration successful!'); window.location.href = 'auth.html';</script>";
 
         exit; //Important! Stops further execution
 

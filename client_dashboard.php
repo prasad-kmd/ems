@@ -3,7 +3,7 @@ session_start(); // Start the session
 
 // Check if the user is logged in
 if (!isset($_SESSION["client_id"])) {
-    header("Location: auth.php"); // Redirect to login page if not logged in
+    header("Location: auth.html"); // Redirect to login page if not logged in
     exit;
 }
 
