@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['staff_id'])) {
-    header("Location: admin_login.php");
+    header("Location: ../admin_login.php");
     exit;
 }
 
-require_once 'db_config.php';
+require_once '../db_config.php';
 
 if (isset($_GET['id'])) {
     $clientId = $_GET['id'];
@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
 
     if ($stmt->execute()) {
         // Delete the client's profile picture if it exists, it is a file and not the default image:
-        if ($clientPhoto && file_exists($clientPhoto) && $clientPhoto !== 'images/default_profile.jpg') {
+        if ($clientPhoto && file_exists($clientPhoto) && $clientPhoto !== './images/default_profile.jpg') {
             unlink($clientPhoto);
         }
 
