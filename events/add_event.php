@@ -80,7 +80,7 @@ $conn->close();
         <textarea rows="2" id="event_description" name="event_description" required placeholder="Event Description"></textarea>
       </div>
       <div class="file input field">
-        <label for="event_title">Event Photo:</label>
+        <label for="event_photo">Event Photo:</label>
         <input type="file" id="event_photo" name="event_photo" />
       </div>
       <div class="four fields">

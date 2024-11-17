@@ -34,7 +34,7 @@ if (isset($_GET['id'])) {
       }
 
 
-        header("Location: admin_dashboard.php");
+        header("Location: ../admin_dashboard.php");
         exit;
     } else {
         echo "Error deleting event: " . $stmt->error;

@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['staff_id'])) {
-    header("Location: admin_login.php");
+    header("Location: ../admin_login.php");
     exit;
 }
 
-require_once 'db_config.php';
+require_once '../db_config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eventId = $_POST['event_id'];
@@ -27,12 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (in_array($_FILES['event_photo']['type'], $allowedTypes)) {
             $ext = pathinfo($_FILES['event_photo']['name'], PATHINFO_EXTENSION);
             $newFileName = uniqid() . "." . $ext;
-            $targetPath = "uploads/" . $newFileName;
+            $targetPath = "../uploads/" . $newFileName;
 
             if (move_uploaded_file($_FILES['event_photo']['tmp_name'], $targetPath)) {
 
                 // Delete the old image if a new one was uploaded:
-                if ($photoPath && file_exists($photoPath) && $photoPath !== 'images/default_profile.jpg') {
+                if ($photoPath && file_exists($photoPath) && $photoPath !== './images/default_profile.jpg') {
                     unlink($photoPath);
                 }
 
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssdssiiiii", $eventTitle, $eventDescription, $photoPath, $eventPrice, $eventType, $eventDate, $eventStartTime, $eventEndTime, $venueId, $eventCapacity, $eventId);
 
     if ($stmt->execute()) {
-        header("Location: admin_dashboard.php");
+        header("Location: ../admin_dashboard.php");
         exit;
     } else {
         echo "Error updating event: " . $stmt->error;
