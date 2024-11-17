@@ -4,7 +4,7 @@ if (!isset($_SESSION['staff_id'])) {
     header("Location: admin_login.php");
     exit;
 }
-require_once 'db_config.php';
+require_once '../db_config.php';
 
 
 //Fetch venues for the dropdown

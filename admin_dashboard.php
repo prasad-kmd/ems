@@ -95,7 +95,7 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
     <!-- menu  -->
     <div class="ui fluid five item menu" style="padding: 5px;font-family: 'Nasalization Rg';">
         <?php if ($role == 'Manager' || $role == 'Event Organizer' || $role == 'System Administrator'): ?>
-            <a href="add_event.php" class="item"><i class="plus square outline icon"></i>Create Event</a>
+            <a href="events/add_event.php" class="item"><i class="plus square outline icon"></i>Create Event</a>
         <?php endif; ?>
         <?php if ($role == 'Manager' || $role == 'System Administrator'): ?>
             <a href="manage_event.php" class="item"><i class="bookmark outline icon"></i>Manage Events</a>
@@ -106,10 +106,10 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
         <?php if ($role == 'Manager' || $role == 'Event Organizer' || $role == 'System Administrator'): ?>
             <a href="manage_clients.php" class="item"><i class="quote left icon"></i>Manage Clients</a>
         <?php endif; ?>
-        <a href="event_calendar.php" class="item disabled"><i class="calendar alternate outline icon"></i>Event Calendar</a>
+        <a href="#" class="item disabled"><i class="calendar alternate outline icon"></i>Event Calendar</a>
     </div>
     <div class="ui fluid five item menu" style="padding: 5px;font-family: 'Nasalization Rg';">
-        <a href="reports.php" class="item disabled"><i class="file alternate icon"></i>Generate Reports</a>
+        <a href="#" class="item disabled"><i class="file alternate icon"></i>Generate Reports</a>
         <?php if ($role == 'Manager' || $role == 'System Administrator'): ?>
             <a href="manage_staff.php" class="item"><i class="user secret icon"></i>Manage Staff</a>
         <?php endif; ?>
