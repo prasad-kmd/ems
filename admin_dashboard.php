@@ -19,7 +19,7 @@ $stmt->fetch();
 $stmt->close();
 // $conn->close(); //Close after fetching data
 
-$profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
+$profilePicture = $staffPhoto ? $staffPhoto : 'assets/images/default_admin.png';
 ?>
 
 <!DOCTYPE html>
@@ -151,9 +151,11 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
                             <span class="value" style="font-family: 'El Messiri';"><?php echo $totalEvents ?></span>
                         </h2>
                     </div>
-                    <div class="center aligned extra content">
-                        <button class="ui inverted grey button"><a href="events/manage_event.php" style="font-family: 'El Messiri';">Manage Events</a></button>
-                    </div>
+                    <?php if ($role == 'Manager' || $role == 'System Administrator'): ?>
+                        <div class="center aligned extra content">
+                            <button class="ui inverted grey button"><a href="events/manage_event.php" style="font-family: 'El Messiri';">Manage Events</a></button>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="ui blue segment">
@@ -183,9 +185,11 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
                             <span class="value" style="font-family: 'El Messiri';"><?php echo $totalClients ?></span>
                         </h2>
                     </div>
-                    <div class="center aligned extra content">
-                        <button class="ui inverted grey button"><a href="clients/manage_clients.php" style="font-family: 'El Messiri';">Manage Clients</a></button>
-                    </div>
+                    <?php if ($role == 'Manager' || $role == 'Event Organizer' || $role == 'System Administrator'): ?>
+                        <div class="center aligned extra content">
+                            <button class="ui inverted grey button"><a href="clients/manage_clients.php" style="font-family: 'El Messiri';">Manage Clients</a></button>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="ui orange segment">
@@ -215,9 +219,11 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
                             <span class="value" style="font-family: 'El Messiri';"><?php echo $totalBookings ?></span>
                         </h2>
                     </div>
-                    <div class="center aligned extra content">
-                        <button class="ui inverted grey button"><a href="bookings/manage_bookings.php" style="font-family: 'El Messiri';">Manage Bookings</a></button>
-                    </div>
+                    <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
+                        <div class="center aligned extra content">
+                            <button class="ui inverted grey button"><a href="bookings/manage_bookings.php" style="font-family: 'El Messiri';">Manage Bookings</a></button>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="ui green segment">
@@ -247,9 +253,11 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
                             <span class="value" style="font-family: 'El Messiri';">LKR <?php echo $totalRevenue ?></span>
                         </h2>
                     </div>
-                    <div class="center aligned extra content">
-                        <button class="ui inverted grey button"><a href="payments/manage_payments.php" style="font-family: 'El Messiri';">Manage Payments</a></button>
-                    </div>
+                    <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
+                        <div class="center aligned extra content">
+                            <button class="ui inverted grey button"><a href="payments/manage_payments.php" style="font-family: 'El Messiri';">Manage Payments</a></button>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="ui purple segment">
@@ -279,9 +287,11 @@ $profilePicture = $staffPhoto ? $staffPhoto : 'images/default_profile.jpg';
                             <span class="value" style="font-family: 'El Messiri';"><?php echo $totalVenues ?></span>
                         </h2>
                     </div>
-                    <div class="center aligned extra content">
-                        <button class="ui primary disabled loading button">&nbsp;&nbsp;&nbsp;</button>
-                    </div>
+                    <?php if ($role == 'Manager' || $role == 'Event Organizer'): ?>
+                        <div class="center aligned extra content">
+                            <button class="ui primary disabled loading button">&nbsp;&nbsp;&nbsp;</button>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
