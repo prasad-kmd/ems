@@ -110,20 +110,20 @@ $conn->close();
                                     </div>
                                 </a>
                             </div>
-                            <div class="ui animated button" tabindex="0"><a href="process_booking.php?id=<?php echo $booking['booking_id']; ?>&action=approve" onclick="return confirm('Are you sure you want to approve this booking?')">
+                            <!-- <div class="ui animated button" tabindex="0"><a href="process_booking.php?id=<?php echo $booking['booking_id']; ?>&action=approve" onclick="return confirm('Are you sure you want to approve this booking?')">
                                     <div class="visible content">Approve</div>
                                     <div class="hidden content">
                                         <i class="calendar check icon"></i>
                                     </div>
                                 </a>
-                            </div>
-                            <div class="ui vertical animated button" tabindex="0"><a href="process_booking.php?id=<?php echo $booking['booking_id']; ?>&action=reject" onclick="return confirm('Are you sure you want to reject this booking?')">
+                            </div> -->
+                            <!-- <div class="ui vertical animated button" tabindex="0"><a href="process_booking.php?id=<?php echo $booking['booking_id']; ?>&action=reject" onclick="return confirm('Are you sure you want to reject this booking?')">
                                     <div class="visible content">Reject</div>
                                     <div class="hidden content">
                                         <i class="close icon"></i>
                                     </div>
                                 </a>
-                            </div>
+                            </div> -->
                             <!-- <div class="ui animated button" tabindex="0"><a href="cancel_booking.php?id=<?php echo $booking['booking_id']; ?>" onclick="return confirm('Are you sure you want to cancel this booking?')">
                                     <div class="visible content">Cancel</div>
                                     <div class="hidden content">

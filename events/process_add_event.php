@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt = $conn->prepare("INSERT INTO event (event_title, event_description, event_photo, event_price, event_type, event_date, event_start_time, event_end_time, venue_id, event_capacity) 
                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssdssiiii", $eventTitle, $eventDescription, $photoPath, $eventPrice, $eventType, $eventDate, $eventStartTime, $eventEndTime, $venueId, $eventCapacity);
+    $stmt->bind_param("sssdssssii", $eventTitle, $eventDescription, $photoPath, $eventPrice, $eventType, $eventDate, $eventStartTime, $eventEndTime, $venueId, $eventCapacity);
 
 
 

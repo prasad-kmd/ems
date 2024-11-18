@@ -168,7 +168,156 @@ $stmt->close();
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>No upcoming events found.</p>
+            <div class="column">
+                <div class="ui fluid green card">
+                    <div class="blurring dimmable image">
+                        <div class="ui dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <p><strong>Content Unavailable</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui placeholder">
+                            <div class="image"></div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="ui placeholder">
+                            <div class="header">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="ui fluid placeholder">
+                            <div class="header">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="paragraph">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui placeholder">
+                            <div class="header">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <button class="ui fluid disabled button">Currently Not Available</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 1 -->
+            <div class="column">
+                <div class="ui fluid red card">
+                    <div class="blurring dimmable image">
+                        <div class="ui dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <p><strong>Content Unavailable</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui placeholder">
+                            <div class="image"></div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="ui placeholder">
+                            <div class="header">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="ui fluid placeholder">
+                            <div class="header">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="paragraph">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui placeholder">
+                            <div class="header">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <button class="ui fluid disabled button">Currently Not Available</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="column">
+                <div class="ui fluid yellow card">
+                    <div class="blurring dimmable image">
+                        <div class="ui dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <p><strong>Content Unavailable</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui placeholder">
+                            <div class="image"></div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="ui placeholder">
+                            <div class="header">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="ui fluid placeholder">
+                            <div class="header">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="paragraph">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="ui placeholder">
+                            <div class="header">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <button class="ui fluid disabled button">Currently Not Available</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 3 -->
         <?php endif; ?>
     </div>
 

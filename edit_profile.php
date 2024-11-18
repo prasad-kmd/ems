@@ -95,7 +95,7 @@ if ($result->num_rows > 0) {
                         <?php endif; ?>
                     </div>
                     <div class="file input field">
-                        <label for="event_photo">New Event Photo:</label>
+                        <label for="event_photo">New Profile Photo:</label>
                         <input type="file" id="staff_photo" name="staff_photo" />
                         <input type="hidden" name="existing_photo" value="<?php echo $staff['staff_photo']; ?>" />
                     </div>

@@ -18,7 +18,7 @@ $stmt->fetch();
 $stmt->close();
 $conn->close();
 
-$profilePicture = $clientPhoto ? $clientPhoto : 'images/default_profile.jpg';
+$profilePicture = $clientPhoto ? $clientPhoto : 'assets/images/default_client.png';
 
 ?>
 

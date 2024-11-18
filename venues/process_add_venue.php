@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $stmt = $conn->prepare("INSERT INTO venue (venue_name, venue_description, venue_photo, venue_address, venue_capacity, venue_email, venue_phone) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssiis", $venueName, $venueDescription, $photoPath, $venueAddress, $venueCapacity, $venueEmail, $venuePhone);
+    $stmt->bind_param("ssssiss", $venueName, $venueDescription, $photoPath, $venueAddress, $venueCapacity, $venueEmail, $venuePhone);
 
     if ($stmt->execute()) {
         header("Location: manage_venues.php");
