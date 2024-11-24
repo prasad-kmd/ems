@@ -42,15 +42,45 @@ $conn->close();
 <html>
 
 <head>
-    <title>Upcoming Bookings</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Upcoming Booking</title>
+    <link rel="stylesheet" href="../assets/css/semantic.css" />
+    <link rel="stylesheet" href="../assets/font/fonts.css" />
 </head>
 
 <body>
-    <h2>Upcoming Booked Events</h2>
-
+    <!-- Nav Bar -->
+    <div class="ui inverted segment">
+        <div class="ui inverted secondary menu" style="font-family: 'Philosopher';">
+            <div class="item" width="50px">
+                <img src="../assets/images/logo.webp" alt="Company Logo" width="50px">
+            </div>
+            <a class="active item">
+                View Upcoming Bookings
+            </a>
+            <div class="right menu">
+                <div class="item">
+                    <a href="../client_dashboard.php"><button class="ui right inverted teal labeled icon button">
+                            <i class="asterisk loading icon"></i>
+                            <span style="font-family: 'Sansumi';font-weight: 500;">Back to Dashboard</span>
+                        </button></a>
+                    <a href="../logout.php"><button class="ui right inverted secondary labeled icon button">
+                            <i class="sign out alternate icon"></i>
+                            <span style="font-family: 'Sansumi';font-weight: 500;">Log out</span>
+                        </button></a>
+                    <!-- &nbsp; -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui fluid vertical menu" style="padding: 5px;">
+        <span class="item" style="font-family: Neuropol;">Upcoming Booking</span>
+    </div>
+    <!-- Nav Bar ends -->
+    <!-- table begins -->
     <?php if (!empty($bookings)): ?>
-        <table>
+        <table class="ui celled striped compact padded teal table">
             <thead>
                 <tr>
                     <th>Booking ID</th>
@@ -65,7 +95,7 @@ $conn->close();
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($bookings as $booking): ?>
+            <?php foreach ($bookings as $booking): ?>
                     <tr>
                         <td><?php echo $booking['booking_id']; ?></td>
                         <td><?php echo $booking['event_title']; ?></td>
@@ -83,6 +113,7 @@ $conn->close();
     <?php else: ?>
         <p>No upcoming bookings found.</p>
     <?php endif; ?>
+    <!-- table ends -->
 
 </body>
 
